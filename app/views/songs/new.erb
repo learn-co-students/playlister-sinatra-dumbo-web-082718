@@ -1,0 +1,21 @@
+<h2>New Song</h2>
+<form method="post" action="/songs">
+  <p>Song Name:<input type="text" name="song[name]" id="Name"></p>
+<br>
+
+<h4>Create New Artist:</h4>
+  <p>Artist Name:<input type="text" name="artist[name]" id="Artist Name"></p>
+
+  <p>Choose an existing artist:
+  <%@artists.each do |artist| %>
+    <p><input type="radio" name="artist_id" value="<%= artist.id %>" id="<%=artist.name%>"><%=artist.name%></input></p>
+  <% end %>
+  </p>
+
+<p>Choose an existing genre:</p>
+  <%@genres.each do |genre| %>
+  <p><input type="checkbox" name="genre_ids[]" value="<%= genre.id %>" id="<%=genre.name%>"><%=genre.name%></input></p>
+  <% end %>
+
+<input type="submit" id="submit" value="Create">
+</form>
