@@ -1,0 +1,4 @@
+<h2>Artists With this Genre </h2>
+  <% @genre.artists.each do |artist| %>
+  <li>  <a href="/artists/<%= artist.slug %>"><%= artist.name %></a> </li>
+  <% end %>

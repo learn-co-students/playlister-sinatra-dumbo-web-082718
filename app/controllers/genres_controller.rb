@@ -7,8 +7,8 @@ end
 
 get '/genres/:slug' do
   @genre = Genre.find_by_slug(params[:slug])
-  @genre_genres = @genre.genres
-    erb :'genre/shows'
+  #@genre_genres = @genre.genres
+    erb :'genre/show'
   end
 
 
