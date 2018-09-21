@@ -1,0 +1,11 @@
+<h1> All Songs //</h1>
+<h4> <a href="/songs/new">Add New Song</a></h4>
+<% checker = [] %>
+<% @songs.each do |song| %>
+  <% if !checker.include?(song.name.first) %>
+  <h5><%= song.name.first %></h5>
+  <% checker << song.name.first %>
+  <% end %>
+<a href="/songs/<%= song.slug %>">
+<%=song.name%>  </a>/
+<% end %>
