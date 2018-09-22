@@ -1,0 +1,14 @@
+<% if Song.last === @song %>
+<p>Successfully created song.</p>
+<% end %>
+<% if Song.last_updated_id && Song.last_updated_id == @song.id %>
+<p>Successfully updated song.</p>
+<% end %>
+<h1><%= @song.name %> </h1>
+<% if @song.artist_id %>
+  <h2>Artist:<a href=<%="/artists/#{@artist.slug}"%>> <%= @song.artist.name %></a></h2>
+<% end %>
+<h2>Genres:</h2>
+<% @song.genres.each do |genre| %>
+<li><a href=<%= "/genres/#{genre.slug}" %>><%= genre.name %> </a></li>
+<% end %>
